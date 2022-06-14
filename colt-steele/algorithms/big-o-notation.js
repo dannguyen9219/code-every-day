@@ -145,3 +145,38 @@ The logarithm of a number roughly measures the number of times you can divide th
 Why use log? Certain searching algorithms have logarithmic time complexity. Efficient sorting algorithms involve logarithms. Recursion sometimes involves logarithmic space complexity. 
 
 */
+
+/*
+Analyzing Performance of Arrays and Objects
+- Understand how objects and arrays work through the lens of Big O
+- Explain why adding elements to the beginning of an array is costly
+- Compare and contrast the runtime for arrays and objects, as well as built-in methods
+
+Objects - unordered data structures, key value pairs
+Work well when you don't need order, need fast access
+
+Big O of Objects
+Insertion - O(1)
+Removal - O(1)
+Searching - O(n)
+Access - O(1)
+
+Arrays - ordered lists
+Use arrays when you need order, need fast access
+
+Big O depends on insertion and removal when it comes to arrays. Inserting and removal at the beginning of the array is harder because you have to re-index the array.
+
+Big O of Array Operations
+Push - O(1)
+Pop - O(1)
+Shift - O(n)
+Unshift - O(n)
+Concat - O(n)
+Slice - O(n)
+Splice - O(n)
+Sort - O(n*logn)
+forEach/map/filter/reduce/etc. - O(n)
+
+
+
+*/
