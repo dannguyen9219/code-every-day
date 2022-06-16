@@ -80,3 +80,42 @@ function timeConversion(s) {
 }
 
 */
+
+// Mini-Max Sum //
+
+function miniMaxSum(arr) {
+    // let sum = arr.sort().reduce((a, b) => a + b, 0)
+    // return(sum-arr[arr.length-1], sum-arr[0])
+    // let arr = [1,2,3,4,5]
+    let sum = arr.reduce((a, b) => a + b);
+    console.log(sum)
+    let maxValue = Math.max(...arr)
+    let minValue = Math.min(...arr);
+    console.log(maxValue)
+    console.log(minValue)
+    console.log((sum - maxValue) + ' ' + (sum - minValue));
+}
+// [10, 14]
+
+// Breaking the Records //
+function breakingRecords(scores) {
+    let games = scores;
+    let min = games[0];
+    let max = games[0];
+    
+    let minRecord = 0;
+    let maxRecord = 0;
+    
+    for (let i = 0; i < scores.length; i++) {
+        if(scores[i] > max) {
+            max = scores[i]
+            maxRecord++
+        }
+        if(scores[i] < min) {
+            min = scores[i]
+            minRecord++
+        }
+    }
+    return [maxRecord, minRecord]
+};
+console.log(breakingRecords([10,5,20,20,4,5,2,25,1]))
