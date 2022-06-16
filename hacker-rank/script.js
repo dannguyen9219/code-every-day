@@ -38,18 +38,45 @@ function timeConversion(s) {
     const arr = s.split('')
     const hourArr = [arr[0], arr[1]]
     let hour = parseInt(hourArr.join(''))
-    let result
-    if(s.includes('PM')){
-        hour += 12
+    let result = arr.join('')
+    arr.pop()
+    arr.pop()
+    
+    if(s.includes("PM")){
+        if(hour !== 12) {
+            hour += 12
+        }
         let hourStr = hour.toString().split('')
-        console.log(hourStr)
         arr.shift()
         arr.shift()
         arr.unshift(hourStr[1])
         arr.unshift(hourStr[0])
         result = arr.join('')
-        console.log(result)
-    } 
+    }   else if (s.includes('AM') && hour === 12) {
+        hour -= 12
+        let hourStr = hour.toString().split('')
+        hourStr.push('0')
+        arr.shift()
+        arr.shift()
+        arr.unshift(hourStr[1])
+        arr.unshift(hourStr[0])
+        result = arr.join('')
+    }
+    return result
+};
+
+function timeConversion(s) {
+    // Write your code here 11:11:11AM
+    const format = s.substring(s.length - 2);
+    let hour = s.substring(0, 2);
+    const minusSecond = s.substring(2, 8);
+    if (format == "AM") {
+        hour = hour == 12 ? '00' : hour;
+    }
+    if (format == "PM") {
+        hour = +hour + 12 < 24 ? +hour + 12 : '12';
+    }
+    return hour + "" + minusSecond;
 }
 
 */
