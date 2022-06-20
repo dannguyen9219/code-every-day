@@ -65,6 +65,7 @@ function timeConversion(s) {
     return result
 };
 
+// Another solution
 function timeConversion(s) {
     // Write your code here 11:11:11AM
     const format = s.substring(s.length - 2);
@@ -82,7 +83,11 @@ function timeConversion(s) {
 */
 
 // Mini-Max Sum //
+/*
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+*/
 
+/*
 function miniMaxSum(arr) {
     // let sum = arr.sort().reduce((a, b) => a + b, 0)
     // return(sum-arr[arr.length-1], sum-arr[0])
@@ -96,8 +101,14 @@ function miniMaxSum(arr) {
     console.log((sum - maxValue) + ' ' + (sum - minValue));
 }
 // [10, 14]
+*/
 
 // Breaking the Records //
+/*
+Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+*/
+
+/*
 function breakingRecords(scores) {
     let games = scores;
     let min = games[0];
@@ -118,4 +129,73 @@ function breakingRecords(scores) {
     }
     return [maxRecord, minRecord]
 };
-console.log(breakingRecords([10,5,20,20,4,5,2,25,1]))
+console.log(breakingRecords([10,5,20,20,4,5,2,25,1])); 
+*/
+
+// Camel Case 4 //
+/*
+Camel Case is a naming style common in many programming languages. In Java, method and variable names typically start with a lowercase letter, with all subsequent words starting with a capital letter (example: startThread). Names of classes follow the same pattern, except that they start with a capital letter (example: BlueCar).
+
+Your task is to write a program that creates or splits Camel Case variable, method, and class names.
+*/
+
+/*
+
+*/
+
+// Divisible Sum Pairs //
+/*
+Given an array of integers and a positive integer k, determine the number of (i,j) pairs where i < j and ar[i] + ar[j] is divisible by k.
+
+Example
+ar = [1,2,3,4,5,6]
+k = 5
+
+Three pairs meet the criteria: [1,4], [2,3] and [4,6].
+*/
+
+/* Solution
+function divisibleSumPairs(n, k, ar) {
+    // Write your code here
+    let result = 0;
+    for (let i = 0; i < n; i++) {
+        for (let j = i+1; j < n; j++){
+            if ( (ar[i] + ar[j]) % k === 0) {
+                result++;
+            }
+        }
+    }
+    return result;
+};
+console.log(divisibleSumPairs(n, 5, [1,2,3,4,5,6]))
+*/
+
+// Sparse Arrays //
+/*
+There is a collection of input strings and a collection of query strings. For each query string, determine how many times it occurs in the list of input strings. Return an array of the results.
+
+Example
+strings = ['ab', 'ab', 'abc']
+queries = ['ab', 'abc', 'bc']
+
+There are 2 instances of 'ab', 1 of 'abc', and 0 of 'bc'. For each query, add an element to the return array, results = [2,1,0]
+
+*/
+/* Solution
+function matchingStrings(strings, queries) {
+    let results = [];
+
+    for (let q of queries) {
+        let count = 0;
+        for (let s of strings) {
+            if (q === s) {
+                count++;
+            }
+        }
+        results.push(count);
+    } 
+    return results;   
+};
+console.log(matchingStrings(['ab', 'ab', 'abc'], ['ab', 'abc', 'bc']));
+
+*/
