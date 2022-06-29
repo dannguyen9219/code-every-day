@@ -380,5 +380,11 @@ class BinarySearchTree {
 - Breadth - when the tree is big, you have to store a lot of nodes, so the space is large
 - Depth - Use less space, fewer nodes to keep track of
 
+// Recap //
+- Trees are non-linear data structures that contain a root and child nodes
+- Binary Trees can have values of any type, but at most two children for each parent
+- Binary Search Trees are a more specific version of binary trees where every node to the left of a parent is less than it's value and every node to the right is greater
+- We can search through tress using BFS and DFS
+
 
 */
